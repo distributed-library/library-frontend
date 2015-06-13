@@ -3,6 +3,7 @@ import EmberValidations from 'ember-validations';
 import localStorage from 'library-frontend/models/local-storage';
 
 export default Ember.Controller.extend(EmberValidations.Mixin,{
+  needs: ['navbar'],
   email: null,
   password: null,
   localstorage: localStorage.create(),
@@ -38,6 +39,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
       Ember.$.post('http://localhost:3000/sessions', creds).then(
         function(response){
           _this.set('localstorage.token',response.token);
+          _this.set('controllers.navbar.loggedIn', true);
           _this.setAuthHeader(response.token);
           _this.transitionToRoute('home');
         },function(){

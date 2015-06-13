@@ -1,0 +1,9 @@
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav navbar-right">
+    {{#if loggedIn}}
+    <li><a href="#" {{action 'logout'}}>Logout</a></li>
+    {{else}}
+    <li><a href="#">Login</a></li>
+    {{/if}}
+  </ul>
+</nav>
