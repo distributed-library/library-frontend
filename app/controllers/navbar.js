@@ -1,18 +1,22 @@
 import Ember from 'ember';
-import localStorage from 'library-frontend/models/local-storage';
 
 export default Ember.Controller.extend({
   
-  localstorage: localStorage.create(),
+  session: Ember.inject.service(),
+
+  localstorage: function(){
+    return this.get('session.localstorage');
+  }.property(),
 
   loggedIn: function(){
     var token = this.get('localstorage.token');
+    return token != null;
   }.property('localstorage.token'),
 
   actions: {
     logout: function(){
-      this.set('localstorage.token', null);
-      //this.set('storage.token',null;)
+      var storage = this.get('localstorage');
+      storage.set('token', null);
       this.transitionToRoute('login');
     }
   }

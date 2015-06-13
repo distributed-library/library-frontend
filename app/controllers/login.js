@@ -1,12 +1,11 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
-import localStorage from 'library-frontend/models/local-storage';
 
 export default Ember.Controller.extend(EmberValidations.Mixin,{
   needs: ['navbar'],
   email: null,
   password: null,
-  localstorage: localStorage.create(),
+  session: Ember.inject.service(),
 
   validations: {
     email: {
@@ -35,11 +34,11 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
     submit: function(){
       var _this = this;
       var creds = _this.prepare_creds();
-      _this.setAuthHeader('');
+      var localstorage = this.get('session.localstorage');
+      _this.setAuthHeader();
       Ember.$.post('http://localhost:3000/sessions', creds).then(
         function(response){
-          _this.set('localstorage.token',response.token);
-          _this.set('controllers.navbar.loggedIn', true);
+          localstorage.set('token',response.token);
           _this.setAuthHeader(response.token);
           _this.transitionToRoute('home');
         },function(){
