@@ -1,13 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  
   session: Ember.inject.service(),
-
-  actions: {
-    logout: function(){
-      this.get('session').clearSession();
+  
+  checkAuthentication: function(){
+    if(this.get('session.isLoggedIn')){
+      this.get('session').setAuthHeader();
+    }else{
       this.transitionToRoute('login');
     }
   }
+
 });

@@ -1,9 +1,16 @@
-<nav class="navbar navbar-inverse">
-  <ul class="nav navbar-nav navbar-right">
-    {{#if loggedIn}}
-    <li><a href="#" {{action 'logout'}}>Logout</a></li>
-    {{else}}
-    <li><a href="#">Login</a></li>
-    {{/if}}
-  </ul>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      {{#link-to 'home' controller.username class='navbar-brand'}} Distributed Library {{/link-to}}
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        {{#if session.isLoggedIn}}
+        <li><a href="#" {{action 'logout'}}>Logout</a></li>
+        {{else}}
+        <li><a href="#">Login</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
 </nav>
