@@ -4,9 +4,7 @@ export default Ember.Controller.extend({
   session: Ember.inject.service(),
   
   checkAuthentication: function(){
-    if(this.get('session.isLoggedIn')){
-      this.get('session').setAuthHeader();
-    }else{
+    if(!this.get('session.isLoggedIn')){
       this.transitionToRoute('login');
     }
   }

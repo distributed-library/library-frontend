@@ -1,0 +1,19 @@
+<h3> Groups </h3>
+<div class="col-md-4">
+  {{#link-to 'groups.new' class="btn btn-primary"}} Add new group {{/link-to}}
+  {{outlet}}
+</div>
+<table class="table">
+  <thead>
+    <th> Name </th>
+    <th> Action </th>
+  </thead>
+  <tbody>
+  {{#each group in model}}
+    <tr>
+      <td> {{group.name }}</td>
+      <td> </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

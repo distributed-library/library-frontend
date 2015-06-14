@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
+import ENV from 'library-frontend/config/environment';
 
 export default Ember.Controller.extend(EmberValidations.Mixin,{
   needs: ['navbar'],
@@ -29,7 +30,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
       var creds = _this.prepare_creds();
       var localstorage = this.get('session.localstorage');
       _this.get('session').setAuthHeader();
-      Ember.$.post('http://localhost:3000/sessions', creds).then(
+      Ember.$.post(ENV.APP.API_HOST +'/sessions', creds).then(
         function(response){
           localstorage.set('token',response.token);
           _this.transitionToRoute('home');
