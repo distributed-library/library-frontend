@@ -10,10 +10,17 @@
   </thead>
   <tbody>
   {{#each group in model}}
-    <tr>
-      <td> {{group.name }}</td>
-      <td> </td>
-    </tr>
+  <tr>
+    <td> {{group.name }}</td>
+    <td> 
+      {{#if group.allowDelete}}
+      <button {{action 'deleteGroup'}} class="btn btn-danger"> Delete</button>
+      {{/if}}
+      {{#if group.allowJoin}}
+      <button {{action 'joinGroup'}} class="btn btn-primary"> Join</button>
+      {{/if}}
+    </td>
+  </tr>
   {{/each}}
   </tbody>
 </table>

@@ -28,11 +28,10 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
     submit: function(){
       var _this = this;
       var creds = _this.prepare_creds();
-      var localstorage = this.get('session.localstorage');
       _this.get('session').setAuthHeader();
       Ember.$.post(ENV.APP.API_HOST +'/sessions', creds).then(
         function(response){
-          localstorage.set('token',response.token);
+          _this.get('session').setLocalStorage(response);
           _this.transitionToRoute('home');
         },function(){
           console.log('Error');

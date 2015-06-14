@@ -18,5 +18,10 @@ export default Ember.Service.extend({
 
   clearSession: function(){
     this.set('localstorage.token', null);
+  },
+
+  setLocalStorage: function(response){
+    this.set('localstorage.token',response.token);
+    this.set('localstorage.user_id',response.user_id);
   }
 });
