@@ -24,4 +24,5 @@ export default Ember.Service.extend({
     this.set('localstorage.token',response.token);
     this.set('localstorage.user_id',response.user_id);
   }
+
 });

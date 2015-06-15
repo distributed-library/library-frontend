@@ -1,0 +1,9 @@
+{{#if allowDelete}}
+  <button {{action 'deleteGroup' group.id}} class="btn btn-danger"> Delete</button>
+{{else}}
+  {{#if joined}}
+    <button {{action 'leaveGroup' group.id}} class="btn btn-danger"> Leave</button>
+  {{else}}
+    <button {{action 'joinGroup' group.id}} class="btn btn-primary"> Join</button>
+  {{/if}}
+{{/if}}

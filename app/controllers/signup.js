@@ -1,11 +1,11 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
-import localStorage from 'library-frontend/models/local-storage';
+import ENV from 'library-frontend/config/environment';
 
 export default Ember.Controller.extend(EmberValidations.Mixin,{
   email: null,
   password: null,
-  localstorage: localStorage.create(),
+  session: Ember.inject.service(),
 
   validations: {
     email: {
@@ -21,9 +21,29 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
       presence: true
     }
   },
+
+  prepare_creds: function(){
+    var creds = {};
+    creds['email'] = this.email;
+    creds['username'] = this.username;
+    creds['password'] = this.password;
+    creds['password_confirmation'] = this.password_confirmation;
+    return { user: creds };
+  },
+
   actions: {
     submit: function(){
-      console.log('after submit');
+      var _this = this;
+      var creds = _this.prepare_creds();
+      _this.get('session').setAuthHeader();
+      Ember.$.post(ENV.APP.API_HOST +'/registrations', creds).then(
+        function(response){
+          _this.get('session').setLocalStorage(response);
+          _this.transitionToRoute('home');
+        },function(){
+          console.log('Error');
+        }
+      );
     }
   }
 });
