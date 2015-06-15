@@ -1,0 +1,23 @@
+<h3> My Items </h3>
+<div class="col-md-4">
+  {{#link-to 'inventory.new' class="btn btn-primary"}} Add new item {{/link-to}}
+  {{outlet}}
+</div>
+<table class="table">
+  <thead>
+    <th> Name </th>
+    <th> Type </th>
+    <th> State </th>
+    <th> Action </th>
+  </thead>
+  <tbody>
+  {{#each item in model}}
+  <tr>
+    <td> {{item.name }}</td>
+    <td> {{item.type}}</td>
+    <td> {{item.aasm_state}}</td>
+    <td>  </td>
+  </tr>
+  {{/each}}
+  </tbody>
+</table>

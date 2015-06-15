@@ -12,6 +12,10 @@ Router.map(function() {
   this.resource('groups', function(){
     this.route('new');
   });
+  this.route('resources');
+  this.route('inventory', function(){
+    this.route('new');
+  });
 });
 
 export default Router;
