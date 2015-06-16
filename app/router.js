@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('inventory', function(){
     this.route('new');
   });
+  this.route('inventory.edit', {path: '/inventory/:item_id/edit'});
 });
 
 export default Router;

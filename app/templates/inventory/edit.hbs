@@ -1,7 +1,7 @@
 {{#bs-form formLayout="vertical" model=this action="submit"}}
-  {{bs-form-element  label="Name" placeholder="Name" property="name"}}
+  {{bs-form-element  label="Name" placeholder="Name" property="model.name" value=model.name}}
   <div class="form-group">
-    {{bs-select  content=inventoryTypes selection=selectedType}}
+    {{bs-select  content=inventoryTypes selection=selectedType value=model.resource_type}}
   </div>
   <div class="form-group">
      {{ember-selectize content=userGroupsList multiple=true placeholder="share with group" optionValuePath="content.id" optionLabelPath="content.name" selection=selectedGroupsList}}

@@ -1,12 +1,6 @@
 import Ember from 'ember';
-import EmberValidations from 'ember-validations';
 
-export default Ember.Controller.extend(EmberValidations.Mixin,{
-  validations: {
-    name: {
-      presence: true
-    },
-  },
+export default Ember.Controller.extend({
 
   inventoryTypes: ['book'],
 
@@ -16,12 +10,15 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
     return this.get('user_groups.content');
   }.property('user_groups.@each'),
 
-  selectedGroupsList: [],
+  selectedGroupsList: function(){
+    return this.get('resource_groups.content');
+  }.property('resource_groups.@each'),
 
   actions: {
     submit: function(){
       var _this = this;
-      var resource = this.store.createRecord('resource', 
+      var resource = this.get('model');
+      resource.setProperties(
         {
           name: this.get('name'), 
           resource_type: this.get('selectedType'),

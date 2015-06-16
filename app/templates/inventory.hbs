@@ -14,9 +14,12 @@
   {{#each item in model}}
   <tr>
     <td> {{item.name }}</td>
-    <td> {{item.type}}</td>
+    <td> {{item.resource_type}}</td>
     <td> {{item.aasm_state}}</td>
-    <td>  </td>
+    <td> 
+      <a {{action 'editItem' item.id }}class="btn btn-primary"> Edit </a>
+      <button {{action 'deleteItem' item.id}} class="btn btn-danger"> Delete</button>
+    </td>
   </tr>
   {{/each}}
   </tbody>
