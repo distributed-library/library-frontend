@@ -20,14 +20,14 @@ export default Ember.Controller.extend({
       var resource = this.get('model');
       resource.setProperties(
         {
-          name: this.get('name'), 
+          name: this.get('model.name'), 
           resource_type: this.get('selectedType'),
-          group_ids: $.map(this.get('selectedGroupsList'), function(group){return group.id})
+          group_ids: Ember.$.map(this.get('selectedGroupsList'), function(group){return group.id;})
         }
       );
-      resource.save().then(function(group){
+      resource.save().then(function(){
         _this.transitionToRoute('inventory');
-      })
+      });
     }
   }
 });

@@ -17,13 +17,13 @@ export default Ember.Component.extend({
   
   actions: {
     deleteGroup: function(id){
-      this.sendAction('deleteGroup', id)
+      this.sendAction('deleteGroup', id);
     },
     leaveGroup: function(group_id){
-      this.sendAction('leaveGroup', group_id)
+      this.sendAction('leaveGroup', group_id);
     },
     joinGroup: function(group_id){
-      this.sendAction('joinGroup', group_id)
+      this.sendAction('joinGroup', group_id);
     }
   }
 });

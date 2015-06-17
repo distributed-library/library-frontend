@@ -12,7 +12,7 @@ Router.map(function() {
   this.resource('groups', function(){
     this.route('new');
   });
-  this.route('resources');
+  this.route('available-resources');
   this.route('inventory', function(){
     this.route('new');
   });

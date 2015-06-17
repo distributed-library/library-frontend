@@ -7,7 +7,6 @@ export default Ember.Route.extend({
   },
 
   setupController: function(controller, model){
-    var _this = this;
     this.store.find('usergroup').then(function(user_groups){
       controller.set('user_groups', user_groups);
     });

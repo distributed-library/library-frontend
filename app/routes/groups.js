@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     return this.store.find('user', this.get('session.localstorage.user_id'));
   },
 
-  setupController: function(controller, model){
+  setupController: function(controller){
     this.store.find('group').then(function(groups){
       controller.set('groups', groups);
     });

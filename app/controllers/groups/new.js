@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
         usergroup.save().then(function(){
           _this.transitionToRoute('groups');
         });
-      })
+      });
     }
   }
 });

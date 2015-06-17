@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
       if(confirm("Are you sure ?")){
         this.store.find('usergroup', group_id).then(function(groupuser){
           groupuser.destroyRecord();
-        })
+        });
       } 
     },
     joinGroup: function(group_id){
