@@ -1,0 +1,5 @@
+{{#if isPendingApproval}}
+  <a {{action 'cancelIssue' item.id}} class="btn btn-danger">Cancel</a>
+{{else}}
+  <a {{action 'returnItem' item.id}} class="btn btn-primary">Return</a>
+{{/if}}

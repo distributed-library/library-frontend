@@ -17,6 +17,7 @@ Router.map(function() {
     this.route('new');
   });
   this.route('inventory.edit', {path: '/inventory/:item_id/edit'});
+  this.route('issued-resource');
 });
 
 export default Router;

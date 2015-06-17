@@ -3,15 +3,18 @@
     <th> Name </th>
     <th> Type </th>
     <th> Owner </th>
+    <th> State </th>
     <th> Action </th>
   </thead>
   <tbody>
-  {{#each item in available-resources}}
+  {{#each item in issued-resources}}
   <tr>
     <td> {{item.name }}</td>
     <td> {{item.resource_type}}</td>
     <td> {{item.owner_name}}</td>
-    <td> <a href="#" {{action 'issueItem' item.id}} class="btn btn-primary">Issue</a>
+    <td> {{item.aasm_state}}</td>
+    <td> 
+        {{issued-action item=item cancelIssue='cancelIssue' returnItem='returnItem'}}
     </td>
   </tr>
   {{/each}}
