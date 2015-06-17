@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <th> Name </th>
+    <th> Type </th>
+    <th> State </th>
+    <th> Action </th>
+  </thead>
+  <tbody>
+  {{#each item in items}}
+  <tr>
+    <td> {{item.name }}</td>
+    <td> {{item.resource_type}}</td>
+    <td> {{item.aasm_state}}</td>
+    <td> 
+    </td>
+  </tr>
+  {{/each}}
+  </tbody>
+</table>
+
