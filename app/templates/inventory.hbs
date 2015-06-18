@@ -15,10 +15,11 @@
   <tr>
     <td> {{item.name }}</td>
     <td> {{item.resource_type}}</td>
-    <td> {{item.aasm_state}}</td>
+    <td> {{item.state}}</td>
     <td> 
       <a {{action 'editItem' item.id }}class="btn btn-primary"> Edit </a>
       <button {{action 'deleteItem' item.id}} class="btn btn-danger"> Delete</button>
+      {{inventory-action item=item cancelIssue='cancelIssue' issueItem='issueItem'}}
     </td>
   </tr>
   {{/each}}
