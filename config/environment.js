@@ -41,7 +41,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.API_HOST = 'http://young-lake-5124.herokuapp.com'
   }
 
   return ENV;
