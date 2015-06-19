@@ -3,7 +3,6 @@ import EmberValidations from 'ember-validations';
 import ENV from 'library-frontend/config/environment';
 
 export default Ember.Controller.extend(EmberValidations.Mixin,{
-  needs: ['navbar'],
   email: null,
   password: null,
   session: Ember.inject.service(),
@@ -34,7 +33,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
           _this.get('session').setLocalStorage(response);
           _this.transitionToRoute('home');
         },function(xhr){
-          _this.set('errors', xhr.responseJSON.errors)
+          _this.set('errors', xhr.responseJSON.errors);
           console.log('Error');
         }
       );

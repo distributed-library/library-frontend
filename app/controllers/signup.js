@@ -41,7 +41,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
           _this.get('session').setLocalStorage(response);
           _this.transitionToRoute('home');
         },function(xhr){
-          _this.set('errors', xhr.responseJSON.errors)
+          _this.set('errors', xhr.responseJSON.errors);
           console.log('Error');
         }
       );

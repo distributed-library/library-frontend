@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   layout: layout,
 
   isPendingApproval: function(){
-    return this.get('item.aasm_state') == 'pending_approval';
+    return this.get('item.aasm_state') === 'pending_approval';
   }.property('item.aasm_state'),
 
   actions: {

@@ -5,6 +5,5 @@ var attr = DS.attr;
 export default DS.Model.extend({
   username: attr('string'),
   email: attr('string'),
-  password: attr('string'),
-  groups: DS.hasMany('group')
+  password: attr('string')
 });
