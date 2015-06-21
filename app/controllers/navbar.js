@@ -8,6 +8,10 @@ export default Ember.Controller.extend({
     logout: function(){
       this.get('session').clearSession();
       this.transitionToRoute('login');
+    },
+
+    login: function(){
+      this.transitionToRoute('login');
     }
   }
 });
