@@ -89,3 +89,6 @@
 .inventory-action{
   margin-top: 10px;
 }
+.loading-slider {
+  z-index: 1001;
+}

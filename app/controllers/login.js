@@ -28,12 +28,15 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
       var _this = this;
       var creds = _this.prepare_creds();
       _this.get('session').setAuthHeader();
+      _this.send('loading');
       Ember.$.post(ENV.APP.API_HOST +'/sessions', creds).then(
         function(response){
           _this.get('session').setLocalStorage(response);
           _this.transitionToRoute('home');
+          _this.send('finished');
         },function(xhr){
           _this.set('errors', xhr.responseJSON.errors);
+          _this.send('finished');
           console.log('Error');
         }
       );

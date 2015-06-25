@@ -1,4 +1,5 @@
 {{render 'navbar'}}
 <div {{ bind-attr id=bodyWrapperClass}}>
+  {{loading-slider isLoading=loading duration=250}}
   {{outlet}}
 </div>
