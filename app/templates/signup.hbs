@@ -1,17 +1,20 @@
-<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xs-offset-0 col-sm-offset-0 col-md-offset-4 col-lg-offset-4 toppad well login">
-  <h3> Sign up to Distributed Library System</h3>
-  {{#bs-form model=this action="submit"}}
-  {{bs-form-element controlType="email" label="Email" placeholder="Email" property="email"}}
-  {{bs-form-element controlType="username" label="Username" placeholder="Username" property="username"}}
-  {{bs-form-element controlType="password" label="Password" placeholder="Password" property="password"}}
-  {{bs-form-element controlType="password" label="Password Confirmation" placeholder="Password Confirmation" property="password_confirmation"}}
-  <div class="form-group col-md-12">
-    <div class="col-md-8">
-      {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+<div class="col-md-12 col-lg-12 home-background">
+  {{partial 'description'}}
+  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad well login">
+    <h3> Sign up </h3>
+    {{#bs-form model=this action="submit"}}
+    {{bs-form-element controlType="email" label="Email" placeholder="Email" property="email"}}
+    {{bs-form-element controlType="username" label="Username" placeholder="Username" property="username"}}
+    {{bs-form-element controlType="password" label="Password" placeholder="Password" property="password"}}
+    {{bs-form-element controlType="password" label="Password Confirmation" placeholder="Password Confirmation" property="password_confirmation"}}
+    <div class="form-group col-md-12">
+      <div class="col-md-8">
+        {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+      </div>
+      <div class="col-md-offset-8">
+        {{#link-to 'login'}} Log in? {{/link-to}}
+      </div>
     </div>
-    <div class="col-md-offset-8">
-      {{#link-to 'login'}} Log in? {{/link-to}}
-    </div>
+    {{/bs-form}}
   </div>
-  {{/bs-form}}
 </div>

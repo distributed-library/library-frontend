@@ -1,3 +1,9 @@
+.home-background{
+  background-image: url('/assets/images/library.jpg');
+  height: 93%;
+  position: absolute;
+  top: 7%;
+}
 .toppad{
   margin-top: 45px;
 }
