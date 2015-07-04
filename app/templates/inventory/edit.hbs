@@ -1,5 +1,6 @@
 {{#bs-form formLayout="vertical" model=this action="submit"}}
   {{bs-form-element  label="Name" placeholder="Name" property="model.name" value=model.name}}
+  {{bs-form-element  label="Isbn no" placeholder="Isbn no" property="model.isbn_number" value=model.isbn_number}}
   <div class="form-group">
     {{bs-select  content=inventoryTypes selection=selectedType value=model.resource_type}}
   </div>

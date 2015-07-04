@@ -23,7 +23,8 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
       var _this = this;
       var resource = this.store.createRecord('resource', 
         {
-          name: this.get('name'), 
+          name: this.get('name'),
+          isbn_number: this.get('isbn_number'), 
           resource_type: this.get('selectedType'),
           group_ids: Ember.$.map(this.get('selectedGroupsList'), function(group){return group.id;})
         }

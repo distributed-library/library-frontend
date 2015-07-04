@@ -7,6 +7,7 @@ export default DS.Model.extend({
   resource_type: attr('string'),
   aasm_state: attr('string'),
   issuer_name: attr('string'),
+  isbn_number: attr('string'),
   group_ids: attr(),
   state: function(){
     var aasm_state = this.get('aasm_state');
