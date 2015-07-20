@@ -12,6 +12,10 @@ export default Ember.Controller.extend({
 
     login: function(){
       this.transitionToRoute('login');
+    },
+
+    profile: function(){
+      this.transitionToRoute('profile');
     }
   }
 });
