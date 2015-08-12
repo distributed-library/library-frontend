@@ -33,6 +33,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
         function(response){
           _this.get('session').setLocalStorage(response);
           _this.transitionToRoute('home');
+          _this.store.unloadAll();
           _this.send('finished');
         },function(xhr){
           _this.set('errors', xhr.responseJSON.errors);

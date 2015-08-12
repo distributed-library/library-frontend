@@ -6,7 +6,7 @@
     <th> Action </th>
   </thead>
   <tbody>
-  {{#each item in available-resources}}
+  {{#each item in pagedContent}}
   <tr>
     <td> {{item.name }}</td>
     <td> {{item.resource_type}}</td>
@@ -17,4 +17,4 @@
   {{/each}}
   </tbody>
 </table>
-
+{{page-numbers content=pagedContent}}

@@ -4,9 +4,10 @@ export default Ember.Route.extend({
   session: Ember.inject.service(),
 
   model: function(){
-    return this.store.find('user', this.get('session.localstorage.user_id'));
+    return this.store.find('available-resource');
   },
 
+/*
   setupController: function(controller){
     // Ugly hack to unload previous loaded available-resource (https://github.com/emberjs/data/issues/962)
     this.store.unloadAll('available-resource');
@@ -14,4 +15,5 @@ export default Ember.Route.extend({
       controller.set('available-resources', resource.content);
     });
   }
+  */
 });
