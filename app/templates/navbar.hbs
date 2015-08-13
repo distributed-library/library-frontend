@@ -6,8 +6,7 @@
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-top-links navbar-right">
       {{#if session.isLoggedIn}}
-      <li><a href='#' {{action 'profile'}} >Profile</a></li>
-      <li class='dropdown'><a href="#" {{action 'logout'}} >Logout</a></li>
+      <li><a href="#" {{action 'logout'}} >Logout</a></li>
       {{else}}
       <li><a href="#" {{action 'login'}} >Login</a></li>
       {{/if}}
@@ -19,9 +18,10 @@
     <div class="sidebar-nav navbar-collapse">
       <ul class="nav in">
         <li>{{#link-to 'groups'}}Groups{{/link-to}}</li>
-        <li>{{#link-to 'inventory'}}My Items{{/link-to}}</li>
         <li>{{#link-to 'available-resources'}}Available Items{{/link-to}}</li>
         <li>{{#link-to 'issued-resource'}}Issued Items{{/link-to}}</li>
+        <li>{{#link-to 'inventory'}}My Items{{/link-to}}</li>
+        <li><a href='#' {{action 'profile'}} >My Profile</a></li>
       </ul>
     </div>
   </div>
