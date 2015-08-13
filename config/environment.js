@@ -41,7 +41,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.API_HOST = 'https://young-lake-5124.herokuapp.com'
+    ENV.APP.API_HOST = 'https://distributed-rails-api.herokuapp.com'
   }
 
   return ENV;
