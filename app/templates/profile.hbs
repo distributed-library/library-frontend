@@ -1,0 +1,47 @@
+<div class='user-profile'>
+  <h3>User Profile</h3>
+  <table class='table user-information'>
+    <tbody>
+      <tr>
+        <td>First Name</td>
+        <td>
+          {{input value=model.first_name type="text" placeholder="First Name" class="form-control required"}}
+        </td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>
+          {{input value=model.last_name type="text" placeholder="Last Name" class="form-control required"}}
+        </td>
+      </tr>
+      <tr>
+        <td>User Name</td>
+        <td>
+          {{input value=model.username type="text" placeholder="User Name" class="form-control required"}}
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>
+          {{input value=model.email type="text" placeholder="Email" class="form-control required"}}
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          {{input value=model.password type="password" placeholder="Password" class="form-control required"}}
+        </td>
+      </tr>
+      <tr>
+        <td>Short Bio</td>
+        <td>
+          {{textarea value=model.short_bio type="text" placeholder="Short bio" class="form-control required"}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class='form-group'>
+    <button {{action "submit"}} class="btn btn-success"> Submit </button>
+    <button {{action "cancel"}} class="btn btn-warning"> Cancel </button>
+  </div>
+</div>

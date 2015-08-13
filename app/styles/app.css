@@ -98,3 +98,17 @@
 .loading-slider {
   z-index: 1001;
 }
+
+.user-profile{
+  width: 500px;
+  text-align: center;
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  margin-left: 150px;
+  margin-top: 50px;
+}
+.dropdown{
+  margin-left: 60px;
+  margin-top: -50px;
+}
+
