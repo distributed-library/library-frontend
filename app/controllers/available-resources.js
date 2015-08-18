@@ -13,11 +13,11 @@ export default Ember.ArrayController.extend({
     issueItem: function(id){
       var _this = this;
       this.store.find('available-resource', id).then(function(resource){
-        var issue = _this.store.createRecord('issued-resource', resource._data);
+        var issue = _this.store.createRecord('issued-resource', resource.get('data'));
+        issue.set('resource_id', resource.get('id'));
         issue.save();
         resource.deleteRecord();
       });
-
     }
   }
 });
