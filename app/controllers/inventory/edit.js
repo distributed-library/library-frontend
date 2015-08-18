@@ -7,11 +7,11 @@ export default Ember.Controller.extend({
   selectedType: 'book',
 
   userGroupsList: function(){
-    return this.get('user_groups.content');
+    return this.get('user_groups');
   }.property('user_groups.@each'),
 
   selectedGroupsList: function(){
-    return this.get('resource_groups.content');
+    return this.get('resource_groups');
   }.property('resource_groups.@each'),
 
   actions: {

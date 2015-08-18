@@ -13,7 +13,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
   selectedType: 'book',
 
   userGroupsList: function(){
-    return this.get('user_groups.content');
+    return this.get('user_groups');
   }.property('user_groups.@each'),
 
   selectedGroupsList: [],
