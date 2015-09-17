@@ -12,6 +12,7 @@ Router.map(function() {
   this.resource('groups', function(){
     this.route('new');
   });
+  this.route('members', {path: '/group/:group_id/members'});
   this.route('available-resources');
   this.route('inventory', function(){
     this.route('new');

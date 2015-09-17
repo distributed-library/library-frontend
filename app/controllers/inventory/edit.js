@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
         {
           name: this.get('model.name'), 
           resource_type: this.get('selectedType'),
-          group_ids: Ember.$.map(this.get('selectedGroupsList'), function(group){return group.id;})
+          group_ids: Ember.$.map(this.get('selectedGroupsList').content, function(group){return group.id;})
         }
       );
       resource.save().then(function(){

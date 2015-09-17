@@ -1,0 +1,13 @@
+{{outlet}}
+<table class="table">
+  <thead>
+    <th> Members </th>
+  </thead>
+  <tbody>
+  {{#each member in members}}
+  <tr>
+    <td> {{member.username }}</td>
+  </tr>
+  {{/each}}
+  </tbody>
+</table>

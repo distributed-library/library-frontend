@@ -32,7 +32,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin,{
       Ember.$.post(ENV.APP.API_HOST +'/sessions', creds).then(
         function(response){
           _this.get('session').setLocalStorage(response);
-          _this.transitionToRoute('home');
+          _this.transitionToRoute('groups');
           _this.store.unloadAll();
           _this.send('finished');
         },function(xhr){

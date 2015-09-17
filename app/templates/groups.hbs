@@ -11,7 +11,7 @@
   <tbody>
   {{#each group in groups}}
   <tr>
-    <td> {{group.name }}</td>
+    <td>{{#link-to 'members' group.id}} {{group.name }} {{/link-to}}</td>
     <td>
       {{group-action group=group user_groups=user_groups deleteGroup='deleteGroup' joinGroup='joinGroup' leaveGroup='leaveGroup'}}
     </td>
